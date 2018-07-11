@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl" ng-init="firstName='Gaurav';lastName='Marvaha'; quantity=5;price=10;
+nameArray=['Gaurav','Ankit','Punit','Pulkit']">
+
+
+	<input type="text" name="firstName" ng-model="firstName">
+	<input type="text" name="lastName" ng-model="lastName">
+
+	<input type="text" name="quantity" ng-model="quantity">
+	<input type="text" name="price" ng-model="price">
+
+	<br>
+
+	First Name : <span ng-bind="firstName"></span> <br>
+	Last Name : <span ng-bind="lastName"></span><br>
+
+	quantity : <span ng-bind="quantity"></span><br>
+	price : <span ng-bind="price"></span><br>
+
+
+
+
+	Full Name : {{ firstName + " " + lastName }}
+	 
+	Total : {{quantity * price}}
+
+	<ul>
+		<li ng-repeat="name in nameArray">{{name}}</li>
+	</ul>
+
+
+</div>
+
+<script src="myApp.js"></script>
+<script src="Controller/myCtrl.js"></script>
+
+</body>
+</html>
+

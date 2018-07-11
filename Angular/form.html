@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+<div ng-app="formExample" ng-controller="FormController">
+  <form name="myForm"  class="my-form">
+    userType: <input name="input" ng-model="userType" required>
+    <span class="error" ng-show="myForm.input.$error.required">Required!</span><br>
+    <code>userType = {{userType}}</code><br>
+    <code>myForm.input.$valid = {{myForm.input.$valid}}</code><br>
+    <code>myForm.input.$error = {{myForm.input.$error}}</code><br>
+    <code>myForm.$valid = {{myForm.$valid}}</code><br>
+    <code>myForm.$error.required = {{!!myForm.$error.required}}</code><br>
+   </form>
+</div>
+</body>
+</html>
+
+
+<script>
+  angular.module('formExample', [])
+    .controller('FormController', ['$scope', function($scope) {
+      $scope.userType = 'guest';
+    }]);
+</script>
+<style>
+ .my-form {
+   transition:all linear 0.5s;
+   background: transparent;
+ }
+ .my-form.ng-invalid {
+   background: red;
+ }
+</style>
+
